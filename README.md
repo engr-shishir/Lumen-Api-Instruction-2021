@@ -95,3 +95,73 @@ class DemoController extends Controller {
 
 ```
 <br><br>
+
+
+
+
+>## 05 <===============> Api Response
++ web.php
+```php
+$router->get('/test/{name}', [DemoController::class, 'Test');
+$router->get('/test', [DemoController::class, 'Json');
+$router->get('/redirect', [DemoController::class, 'redirect');
+$router->get('/download', [DemoController::class, 'download');
+```
++ Response Area `body,header`
++ Response Type `simple string,json,xml,download,redirect`
+```php
+
+// String Response with header & body
+  public function Test($name)
+  {
+    return response($name)
+           ->header('name',$name)
+           ->header('age',28);
+  }
+
+
+
+// json response in body from array
+  //simple array
+  public function Json()
+  {
+    $myArray = array('cat','bat','net');
+    return response()->json($myArray);
+  }
+  //multidimentional array
+  public function Json()
+  {
+    $myArray = array
+    (
+      array('Volvo',200),
+      array('BMW',500),
+      array('Sab',700)
+    )
+    return response()->json($myArray);
+  }
+  //asociative array
+  public function Json()
+  {
+    $myArray = array('cat'=>'30','bat'=>'35','net'=>'38');
+    return response()->json($myArray);
+  }
+
+
+
+
+// Response Redirect
+public function redirect()
+{
+  return redirect('/');
+}
+
+
+
+// Response Download
+public function download()
+{
+  $path = 'demo.pdf';
+  return response()->download($path);
+}
+
+```
