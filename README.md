@@ -45,6 +45,7 @@ $router->delete('/delete', function(){
 
 
 Now if we want to tes this methoad we should use poastman application. Browser can check only get meathoad
+
 ```
 <br><br>
 
@@ -71,7 +72,26 @@ $router->post('/name/{nameValue}/age/{ageValue}', function($nameValue,$ageValue)
 $router->post('/name/{nameValue}[/{ageValue}]', function($nameValue,$ageValue=null){
   return $nameValue.$ageValue;
 });
+
 ```
 <br><br>
 
 
+
+
+>## 04 <===============> Pass Parameters From Router to Controller
++ web.php
+```php
+$router->get('/test/{name}', [DemoController::class, 'Test');
+```
++ DemoController.php
+```php
+class DemoController extends Controller {
+  public function Test($name)
+  {
+    return "My name is".$name;
+  }
+}
+
+```
+<br><br>
