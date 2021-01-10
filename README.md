@@ -1,6 +1,7 @@
-# Lumen Api
+# Lumen Rest Api
  Lumen Rest Api 2021
  <br><br><br>
+
 
 
 >## 01 
@@ -41,5 +42,30 @@ Now if we want to tes this methoad we should use poastman application. Browser c
 ```
 <br><br>
 
+
+
+>## 03 <===============> Route Parameters
+<=====>  Required Parameters
+<=====>  Optional Parameters
++ routes/web.php
+```php
+
+// Pass Required One Parameters
+$router->post('/name/{name}', function($name){
+  return $name;
+});
+
+// Pass Required Maultipple Parameters
+$router->post('/name/{nameValue}/age/{ageValue}', function($nameValue,$ageValue){
+  return $nameValue.$ageValue;
+});
+
+
+// Pass Optional Parameters
+$router->post('/name/{nameValue}[/{ageValue}]', function($nameValue,$ageValue=null){
+  return $nameValue.$ageValue;
+});
+```
+<br><br>
 
 
