@@ -109,6 +109,7 @@ $router->get('/download', [DemoController::class, 'download');
 ```
 + Response Area `body,header`
 + Response Type `simple string,json,xml,download,redirect`
++ DemoController.php
 ```php
 
 // String Response with header & body
@@ -165,3 +166,34 @@ public function download()
 }
 
 ```
+<br><br>
+
+
+
+
+
+
+
+>## 06 <===============> Sending And Catching
++ Client Send <---> Api Catch Data <---> Api Slice Data <---> Database
++ way of sending and catching `url,header,json data using body`
++ Request Class
++ web.php
+```php
+$router->post('/catch', [DemoController::class, 'catch');
+```
++ DemoController.php
+```php
+use Illuminate\Http\Request;
+
+public function catch(Request $request)
+{
+  return $request; // this way api only can access parameter and body data
+
+  return $request->header(); // this way api can access header data
+
+  return $request->header('key'); // this way api can access header specific value according to key
+}
+
+```
+<br><br>
