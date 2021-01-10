@@ -197,3 +197,15 @@ public function catch(Request $request)
 
 ```
 <br><br>
+
+
+
+
+
+
+
+
+>## 07 <===============> Database Connection
++ open `Xampp`
++ create database in `phpMyAdmin`
++ Create database conection with `.env` file
