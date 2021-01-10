@@ -3,6 +3,12 @@
  <br><br><br>
 
 
+>## Representaional State Transfer
++ Rest Api works with` Client Server`
++ Rest Api `Stateless`.Because `Api Script` can't store any sata
++ `Cacheable`. That menans when client get data from api script, he can store some data
++ Uniform interace
+
 
 >## 01 
 ## Create Lumen New Project
